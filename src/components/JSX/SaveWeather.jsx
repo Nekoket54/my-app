@@ -10,7 +10,7 @@ function SaveWeather(params) {
 
   useEffect(() => {
     const apiKey = "e7b19f30f0db787cef3ba188f0cc21c0";
-    const city = "London";
+    const city = "Kharkiv";
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=en`;
 
     fetch(url)
@@ -36,16 +36,33 @@ function SaveWeather(params) {
   const iconCode = weatherData.weather[0].icon;
   const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
 
+  const d = new Date((weatherData.dt + weatherData.timezone) * 1000);
+  const dayOfWeek = d.toLocaleDateString("en-US", {
+    weekday: "long",
+    timeZone: "UTC",
+  });
+
+  const day = d.getUTCDate().toString().padStart(2, "0");
+  const month = (d.getUTCMonth() + 1).toString().padStart(2, "0");
+  const year = d.getUTCFullYear();
+  const dateString = `${day}.${month}.${year}`;
+
+  const hours = d.getUTCHours().toString().padStart(2, "0");
+  const minutes = d.getUTCMinutes().toString().padStart(2, "0");
+  const timeString = `${hours}:${minutes}`;
+
   return (
     <section className="saveWeather">
       <div className="saveWeather-container">
         <div className="saveWeather-container-box1">
-          <p className="saveWeather-container-box1-textCity">Prague</p>
+          <p className="saveWeather-container-box1-textCity">
+            {weatherData.name}
+          </p>
           <p className="saveWeather-container-box1-textCountry">
-            Czech Republic
+            {weatherData.sys.country}
           </p>
         </div>
-        <p className="saveWeather-container-textTime">14:00</p>
+        <p className="saveWeather-container-textTime">{timeString}</p>
         <div className="saveWeather-container-box2">
           <button className="saveWeather-container-box2-btnHourly">
             Hourly forecast
@@ -55,11 +72,13 @@ function SaveWeather(params) {
           </button>
         </div>
         <div className="saveWeather-container-box3">
-          <p className="saveWeather-container-box3-textDate">13.10.2023</p>
-          <p className="saveWeather-container-box3-textDay">Friday</p>
+          <p className="saveWeather-container-box3-textDate">{dateString}</p>
+          <p className="saveWeather-container-box3-textDay">{dayOfWeek}</p>
         </div>
         <img src={iconUrl} alt="" className="saveWeather-container-icon" />
-        <h2 className="saveWeather-container-name">22℃</h2>
+        <h2 className="saveWeather-container-name">
+          {weatherData.main.temp}°C
+        </h2>
         <div className="saveWeather-container-box4">
           <GrRefresh className="saveWeather-container-box4-refresh" />
           <FaRegHeart className="saveWeather-container-box4-regHeart" />
