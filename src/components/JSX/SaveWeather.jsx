@@ -21,7 +21,7 @@ function SaveWeather(params) {
         return response.json();
       })
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setWeatherData(data);
       })
       .catch((error) => {

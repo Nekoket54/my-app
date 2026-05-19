@@ -1,4 +1,6 @@
 .dashboard {
+  display: grid;
+  justify-content: center;
   background-image: url(../IMG/background.png);
   background-color: rgba(0, 0, 0, 0.48);
   background-blend-mode: multiply;
@@ -18,7 +20,7 @@
 .dashboard-container1 {
   width: 613px;
   display: flex;
-  margin-left: 173px;
+  margin-right: 180px;
   margin-bottom: 80px;
 }
 .dashboard-container1-text {
