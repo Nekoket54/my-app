@@ -1,7 +1,8 @@
 import "../CSS/Dashboard.css";
 import { IoSearch } from "react-icons/io5";
 
-function Dashboard(params) {
+function Dashboard({onAddCity}) {
+
   return (
     <section className="dashboard">
       <h1 className="dashboard-name">Weather dashboard</h1>
@@ -21,7 +22,7 @@ function Dashboard(params) {
           placeholder="Search location..."
         />
         <div className="dashboard-container2-searchIcon">
-          <IoSearch className="dashboard-container2-searchIcon-icon" />
+          <IoSearch className="dashboard-container2-searchIcon-icon" onClick={onAddCity}/>
         </div>
       </div>
     </section>

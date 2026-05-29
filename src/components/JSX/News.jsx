@@ -8,7 +8,7 @@ function News(params) {
   useEffect(() => {
     const apiKey = "74ebc76ef0ff4d90873ae8f47932b039";
     const category = "catastrophe";
-    const url = `https://newsapi.org/v2/everything?qInTitle=${category}&from=2026-04-19&sortBy=publishedAt&apiKey=${apiKey}`;
+    const url = `https://newsapi.org/v2/everything?qInTitle=${category}&sortBy=publishedAt&apiKey=${apiKey}`;
 
     fetch(url)
       .then((response) => {

@@ -7,10 +7,12 @@ import { MdDelete } from "react-icons/md";
 
 function SaveWeather(params) {
   const [weatherData, setWeatherData] = useState(null);
+  const [nameCity, setNameCity] = useState();
+  const [groupCity, setGroupCity] = useState([]);
 
   useEffect(() => {
     const apiKey = "e7b19f30f0db787cef3ba188f0cc21c0";
-    const city = "Kharkiv";
+    const city = "kharkiv";
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=en`;
 
     fetch(url)
@@ -50,6 +52,11 @@ function SaveWeather(params) {
   const hours = d.getUTCHours().toString().padStart(2, "0");
   const minutes = d.getUTCMinutes().toString().padStart(2, "0");
   const timeString = `${hours}:${minutes}`;
+
+  // function addCity({onAddCity}, evt) {
+  //   console.log('p');
+    
+  // }
 
   return (
     <section className="saveWeather">
