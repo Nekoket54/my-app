@@ -58,6 +58,9 @@
   font-size: 14px;
   color: #878787;
 }
+.dashboard-container2-search:focus{
+  color: #000 ;
+}
 .dashboard-container2-searchIcon {
   display: flex;
   align-items: center;

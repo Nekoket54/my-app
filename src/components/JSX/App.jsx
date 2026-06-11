@@ -11,8 +11,7 @@ function App(params) {
     return(
         <div>
             <Nav/>
-            <Dashboard />
-            {/* onAddCity={addCity} */}
+            {/* <Dashboard /> */}
             <SaveWeather />
             <News/>
             <Nature/>

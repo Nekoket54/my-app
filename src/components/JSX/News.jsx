@@ -18,7 +18,7 @@ function News(params) {
         return response.json();
       })
       .then((data) => {
-        console.log(data.articles);
+        // console.log(data.articles);
         setNewsData(data.articles);
       })
       .catch((error) => {

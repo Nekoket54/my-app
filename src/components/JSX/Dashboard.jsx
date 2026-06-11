@@ -1,7 +1,17 @@
+import { useState, useEffect } from "react";
 import "../CSS/Dashboard.css";
 import { IoSearch } from "react-icons/io5";
 
-function Dashboard({onAddCity}) {
+function Dashboard({ onAddCity }) {
+  const [inputValue, setInputValue] = useState("");
+
+  function inputChange(evt) {
+    setInputValue(evt.target.value);
+  }
+  function handleAdd() {
+    onAddCity(inputValue);
+    setInputValue("");
+  }
 
   return (
     <section className="dashboard">
@@ -20,9 +30,17 @@ function Dashboard({onAddCity}) {
           type="text"
           className="dashboard-container2-search"
           placeholder="Search location..."
+          value={inputValue}
+          onChange={inputChange}
+          onKeyDown={(e)=>{
+            if(e.key === 'Enter') handleAdd();
+          }}
         />
         <div className="dashboard-container2-searchIcon">
-          <IoSearch className="dashboard-container2-searchIcon-icon" onClick={onAddCity}/>
+          <IoSearch
+            className="dashboard-container2-searchIcon-icon"
+            onClick={handleAdd}
+          />
         </div>
       </div>
     </section>

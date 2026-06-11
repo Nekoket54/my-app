@@ -23,7 +23,7 @@ function Nature(params) {
         return response.json();
       })
       .then((data) => {
-        console.log(data.hits);
+        // console.log(data.hits);
         setNaturesData(data);
       })
       .catch((error) => {
