@@ -10,3 +10,7 @@ sup {
   font-size: 0.6em;
   line-height: 0;
 }
+
+html {
+  scroll-behavior: smooth;
+}

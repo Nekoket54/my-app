@@ -1,0 +1,92 @@
+.eightDaysWeather {
+  background: #e8e8e8;
+  border-radius: 20px;
+  margin: 0px 150px 80px 150px;
+  padding: 0px 78px 32px 76px;
+}
+.eightDaysWeather-name {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 16px;
+  color: #000;
+  margin-bottom: 20px;
+  padding-top: 26px;
+}
+.eightDaysWeather-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  background: #d9d9d9;
+  padding: 0px 50px 0px 50px;
+  margin-bottom: 10px;
+}
+.eightDaysWeather-container-text {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  color: #000;
+
+  flex: 1;
+  text-align: left;
+}
+.eightDaysWeather-container-box {
+  display: flex;
+  align-items: center;
+
+  flex: 1;
+  justify-content: center;
+}
+.eightDaysWeather-container-box-icon {
+  width: 45px;
+  height: 45px;
+}
+.eightDaysWeather-container-box-text {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  color: #000;
+}
+.eightDaysWeather-container-text2 {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  text-align: right;
+  color: #000;
+
+  flex: 1;
+  text-align: right;
+}
+
+@media (max-width: 1200px) {
+  .eightDaysWeather-list-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    column-gap: 43px;
+    row-gap: 35px;
+  }
+  .eightDaysWeather-container {
+    display: block;
+    width: 100px;
+    height: 140px;
+    padding: 0px;
+    padding: 10px 27px;
+  }
+  .eightDaysWeather-container-text{
+    text-align: center;
+  }
+  .eightDaysWeather-container-box{
+    display: grid;
+    margin: 20px 0px 15px 0px;
+  }
+  .eightDaysWeather-container-text2{
+    text-align: center;
+    padding-bottom: 12px;
+  }
+}
+@media (max-width: 850px) {
+  .eightDaysWeather{
+    margin: 0;
+  }
+}

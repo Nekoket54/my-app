@@ -6,7 +6,7 @@ import whatsapp from "../IMG/whatsapp.png"
 
 function Footer(params) {
     return(
-        <footer className="footer">
+        <footer className="footer" id="contacts">
             <img src={logo} alt="" className="footer-logo" />
             <div className="footer-container1">
                 <h2 className="footer-container1-name">Address</h2>

@@ -1,32 +1,65 @@
 .nav {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 15px 0px;
+  padding: 15px 0;
+  background-color: #fff;
+  z-index: 100;
+  box-sizing: border-box;
 }
+
 .nav-photo {
-  margin-left: 150px;
+  margin-left: 9.3rem;
 }
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-family: var(--second-family);
+  font-weight: 500;
+  font-size: 14px;
+  color: #000;
+  cursor: pointer;
+  align-items: center;
+  gap: 5px;
+}
+
+.nav-menu-wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
 .nav-container {
   display: flex;
-  margin-left: 111px;
-  margin-right: 519px;
-  align-items: center;
+  margin-left: 6%;
   column-gap: 45px;
 }
+
 .nav-container1-link {
   font-family: var(--second-family);
   font-weight: 500;
   font-size: 12px;
   color: #000;
   cursor: pointer;
+  text-decoration: none;
 }
+
 .nav-container2 {
   display: flex;
   align-items: center;
-  margin-right: 150px;
+  margin-right: 9.3rem;
 }
+
+.nav-user-name {
+  margin-right: 10px;
+  color: #333;
+}
+
 .nav-container2-btn {
   margin-right: 27px;
   border-radius: 10px;
@@ -36,11 +69,79 @@
   height: 35px;
   background: #ffb36c;
   cursor: pointer;
-
   font-family: var(--second-family);
   font-weight: 500;
   font-size: 12px;
   color: #000;
 }
+
 .nav-container2-userPhoto {
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+  .nav {
+    padding: 15px 4rem;
+  }
+  .nav-photo,
+  .nav-container,
+  .nav-container2 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 850px) {
+  .nav {
+    padding: 15px 2rem;
+  }
+
+  .nav-photo {
+    margin: 0;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-menu-wrapper {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #eeeeee;
+    padding: 40px 2rem;
+    box-sizing: border-box;
+    box-shadow: inset 0px 25px 30px -15px rgba(0, 0, 0, 0.2);
+  }
+
+  .nav-menu-wrapper.is-open {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .nav-container {
+    flex-direction: column;
+    gap: 25px;
+    margin: 0;
+  }
+
+  .nav-container2 {
+    margin: 0;
+    width: auto;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 20px;
+  }
+
+  .nav-container2-btn {
+    margin-right: 0;
+  }
 }

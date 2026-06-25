@@ -9,7 +9,7 @@
 }
 .news-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   margin: 40px 0px 40px 0px;
   flex-wrap: wrap;
 }
@@ -59,4 +59,10 @@
   font-weight: 500;
   font-size: 16px;
   color: #000;
+}
+
+@media (max-width: 850px) {
+  .news{
+    margin: 0px 0px 80px 0px;
+  }
 }
